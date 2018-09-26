@@ -19,7 +19,7 @@ build: $(RPMS)
 	mkdir -p rpm/SOURCES rpm/BUILD rpm/RPMS rpm/BUILDROOT
 	spectool --get-files --directory rpm/SOURCES/ $^
 	rpmbuild --quiet -bb --buildroot=$(PWD)/rpm/BUILDROOT $^
-	mv rpm/RPMS/*/$(patsubst %.rpm,%,$@)*.rpm $@
+	# mv rpm/RPMS/*/$(patsubst %.rpm,%,$@)*.rpm $@
 
 # To rename the rpm to its correct name use:
 # fullname=$( rpm --query --package $rpm ).rpm
